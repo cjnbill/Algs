@@ -11,7 +11,7 @@ using namespace std;
 
 class TrieNode{
 public:
-    TrieNode():child(26, nullptr),isWord(false){}
+    TrieNode();
     vector<TrieNode*> child;
     bool isWord;
 };
@@ -22,18 +22,18 @@ public:
     Trie();
 
     /** Inserts a word into the trie. */
-    void insert(string word);
+    void insert(string& word);
 
     /** Returns if the word is in the trie. */
-    bool search(string word);
+    bool search(string& word);
 
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
-    bool startsWith(string prefix);
+    bool startsWith(string& prefix);
 
 
     /** Returns word end where in the trie. */
-    TrieNode* searchWordNode(string word);
+    TrieNode* searchWordNode(string& word);
 };
 
 /**
