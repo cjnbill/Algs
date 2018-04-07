@@ -3,4 +3,4 @@ project(algs)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algs main.cpp LongestSubwithK.cpp LongestSubwithK.h union_find.cpp union_find.h Trie.cpp Trie.h)
+add_executable(algs main.cpp LongestSubwithK.cpp LongestSubwithK.h union_find.cpp union_find.h Trie.cpp Trie.h MedianFinder.cpp)
