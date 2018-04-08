@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <set>
 
 using namespace std;
 class MedianFinder {
@@ -49,3 +50,37 @@ public:
     }
 };
 
+
+vector<double> medianSlidingWindow(vector<int>& nums, int k) {
+    auto n=nums.size();
+    multiset<int> lo;
+    multiset<int> hi;
+    vector<double> res;
+
+    for(int i=0;i<n;i++){
+        //delete left side of the window
+        if(i>=k){
+            if(lo.count(nums[i-k])){
+                lo.erase(lo.find(nums[i-k]));
+            }
+            else if(hi.count(nums[i-k])){
+                hi.erase(hi.find(nums[i-k]));
+            }
+        }
+        //add the right side
+        lo.insert(nums[i]);
+        hi.insert(*lo.begin());
+        lo.erase(lo.begin());
+        if(lo.size()<hi.size()){
+            lo.insert(*hi.rbegin());
+            hi.erase(--hi.end());
+        }
+        if(i>=k-1){
+            if(hi.size()<lo.size()){
+                res.push_back(*lo.begin());
+            }
+            else res.push_back(((double)*lo.begin()+*hi.rbegin())/2.0);
+        }
+    }
+    return res;
+}
