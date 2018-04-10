@@ -4,22 +4,22 @@ using namespace std;
 
 
 template <class T>
-class fibonode {
+class FiboNode {
     public:
-        T key;
-        int degree;
-        bool childcut;
-        fibonode<T> *left;
-        fibonode<T> *right;
-        fibonode<T> *child;
-        fibonode<T> *parent;
+        T key_;
+        int degree_;
+        bool childcut_;
+        FiboNode<T> *left;
+        FiboNode<T> *right;
+        FiboNode<T> *child;
+        FiboNode<T> *parent;
 
-        fibonode(T value):key(value), degree(0), childcut(false),
+        FiboNode(T value):key_(value), degree_(0), childcut_(false),
             left(NULL),right(NULL),child(NULL),parent(NULL)
         {
-            key    = value;
-            degree = 0;
-            childcut = false;
+            key_    = value;
+            degree_ = 0;
+            childcut_ = false;
             left   = this;
             right  = this;
             parent = NULL;
@@ -28,38 +28,38 @@ class fibonode {
 };
 
 template <class T>
-class fiboheap {
+class FiboHeap {
     private:
         int keyNum;
         int maxDegree;
-        fibonode<T> *max;
-        fibonode<T> **cons;
+        FiboNode<T> *max;
+        FiboNode<T> **cons;
 
     public:
-        fiboheap();
-        ~fiboheap();
+        FiboHeap();
+        ~FiboHeap();
 
-        void insert(fibonode<T> *node);
+        void insert(FiboNode<T> *node);
         void removeMax();
-        void combine(fiboheap<T> *other);
-        void increaseKeyKey(fibonode<T> *node, T key);
-        void addNode(fibonode<T> *node, fibonode<T> *root);
-        void removeNode(fibonode<T> *node);
-        fibonode<T>* getMax();
-        fibonode<T>* extractMax();
+        void combine(FiboHeap<T> *other);
+        void increaseKeyKey(FiboNode<T> *node, T key);
+        void addNode(FiboNode<T> *node, FiboNode<T> *root);
+        void removeNode(FiboNode<T> *node);
+        FiboNode<T>* getMax();
+        FiboNode<T>* extractMax();
         void print();
-        void link(fibonode<T>* node, fibonode<T>* root);
+        void link(FiboNode<T>* node, FiboNode<T>* root);
         void makeCons();
         void consolidate();
-        void renewDegree(fibonode<T> *parent, int degree);
-        void cut(fibonode<T> *node, fibonode<T> *parent);
-        void cascadingCut(fibonode<T> *node) ;
-        void increaseKey(fibonode<T>* node, T key);
+        void renewDegree(FiboNode<T> *parent, int degree);
+        void cut(FiboNode<T> *node, FiboNode<T> *parent);
+        void cascadingCut(FiboNode<T> *node) ;
+        void increaseKey(FiboNode<T>* node, T key);
 
 };
 
 template <class T>
-fiboheap<T>::fiboheap()
+FiboHeap<T>::FiboHeap()
 {
     keyNum = 0;
     maxDegree = 0;
@@ -68,13 +68,13 @@ fiboheap<T>::fiboheap()
 }
 
 template <class T>
-fiboheap<T>::~fiboheap()
+FiboHeap<T>::~FiboHeap()
 {
 }
 
 //add node to the left of root
 template <class T>
-void fiboheap<T>::addNode(fibonode<T> *node, fibonode<T> *root)
+void FiboHeap<T>::addNode(FiboNode<T> *node, FiboNode<T> *root)
 {
     node->left        = root->left;
     root->left->right = node;
@@ -84,13 +84,13 @@ void fiboheap<T>::addNode(fibonode<T> *node, fibonode<T> *root)
 
 //insert node to the heap
 template <class T>
-void fiboheap<T>::insert(fibonode<T> *node)
+void FiboHeap<T>::insert(FiboNode<T> *node)
 {
     if(keyNum==0)
         max=node;
     else{
         addNode(node,max);
-        if(max->key<node->key)
+        if(max->key_<node->key_)
             max=node;
     }
     keyNum++;
@@ -98,7 +98,7 @@ void fiboheap<T>::insert(fibonode<T> *node)
 
 //remove from the sibling linked-list
 template <class T>
-void fiboheap<T>::removeNode(fibonode<T> *node)
+void FiboHeap<T>::removeNode(FiboNode<T> *node)
 {
     node->left->right = node->right;
     node->right->left = node->left;
@@ -106,16 +106,16 @@ void fiboheap<T>::removeNode(fibonode<T> *node)
 
 //get max pointer
 template <class T>
-fibonode<T>* fiboheap<T>::getMax()
+FiboNode<T>* FiboHeap<T>::getMax()
 {
     return max;
 }
 
 //get the max node with it's subtree
 template <class T>
-fibonode<T>* fiboheap<T>::extractMax()
+FiboNode<T>* FiboHeap<T>::extractMax()
 {
-    fibonode<T> *p = max;
+    FiboNode<T> *p = max;
 
     if (p == p->right)
         max = NULL;
@@ -131,7 +131,7 @@ fibonode<T>* fiboheap<T>::extractMax()
 
 //combine to  tree,set one tree as the child of the other
 template <class T>
-void fiboheap<T>::link(fibonode<T>* node, fibonode<T>* root)
+void FiboHeap<T>::link(FiboNode<T>* node, FiboNode<T>* root)
 {
     removeNode(node);
     if (root->child == NULL)
@@ -140,13 +140,13 @@ void fiboheap<T>::link(fibonode<T>* node, fibonode<T>* root)
         addNode(node, root->child);
 
     node->parent = root;
-    root->degree++;
-    node->childcut = false;
+    root->degree_++;
+    node->childcut_ = false;
 }
 
 //make memory for consolidate
 template <class T>
-void fiboheap<T>::makeCons()
+void FiboHeap<T>::makeCons()
 {
     int old = maxDegree;
 
@@ -155,16 +155,16 @@ void fiboheap<T>::makeCons()
     if (old >= maxDegree)
         return ;
 
-    cons = (fibonode<T> **)realloc(cons,
-            sizeof(fiboheap<T> *) * (maxDegree + 1));
+    cons = (FiboNode<T> **)realloc(cons,
+            sizeof(FiboHeap<T> *) * (maxDegree + 1));
 }
 
 //combine the same dgreee tree in the root link list
 template <class T>
-void fiboheap<T>::consolidate()
+void FiboHeap<T>::consolidate()
 {
     int i, d, D;
-    fibonode<T> *x, *y, *tmp;
+    FiboNode<T> *x, *y, *tmp;
 
     makeCons();
     D = maxDegree + 1;
@@ -175,13 +175,13 @@ void fiboheap<T>::consolidate()
     while (max != NULL)
     {
         x = extractMax();
-        d = (x->degree);
+        d = (x->degree_);
         // cons[d] != NULL，means there are two trees have same degree
         while (cons[d] != NULL)
         {
             y = cons[d];                // y has same degree with x
-            if (x->key < y->key)        // make sure x>y
-                swap(x, y);
+            if (x->key_ < y->key_)        // make sure x>y
+                swap(*x, *y);
 
             link(y, x);    // combine x and y
             cons[d] = NULL;
@@ -201,7 +201,7 @@ void fiboheap<T>::consolidate()
             else
             {
                 addNode(cons[i], max);
-                if ((cons[i])->key > max->key)
+                if ((cons[i])->key_ > max->key_)
                     max = cons[i];
             }
         }
@@ -211,13 +211,13 @@ void fiboheap<T>::consolidate()
 
 
 template <class T>
-void fiboheap<T>::removeMax()
+void FiboHeap<T>::removeMax()
 {
     if (max==NULL)
         return ;
 
-    fibonode<T> *child = NULL;
-    fibonode<T> *m = max;
+    FiboNode<T> *child = NULL;
+    FiboNode<T> *m = max;
     // move every child of max to the root link list
     while (m->child != NULL)
     {
@@ -247,19 +247,19 @@ void fiboheap<T>::removeMax()
 
 //change the node's degree
 template <class T>
-void fiboheap<T>::renewDegree(fibonode<T> *node, int degree)
+void FiboHeap<T>::renewDegree(FiboNode<T> *node, int degree)
 {
-    node->degree -= degree;
+    node->degree_ -= degree;
 }
 
 
 //cut node off the parent and move it to the root link list
 template <class T>
-void fiboheap<T>::cut(fibonode<T> *node, fibonode<T> *parent)
+void FiboHeap<T>::cut(FiboNode<T> *node, FiboNode<T> *parent)
 {
     removeNode(node);
     //renewDegree(parent, node->degree);
-    renewDegree(parent, parent->degree-1);
+    renewDegree(parent, parent->degree_-1);
 
     if (node == node->right)
         parent->child = NULL;
@@ -268,20 +268,20 @@ void fiboheap<T>::cut(fibonode<T> *node, fibonode<T> *parent)
 
     node->parent = NULL;
     node->left = node->right = node;
-    node->childcut = false;
+    node->childcut_ = false;
     addNode(node, max);
 }
 
 
 //do the cascadingCut
 template <class T>
-void fiboheap<T>::cascadingCut(fibonode<T> *node)
+void FiboHeap<T>::cascadingCut(FiboNode<T> *node)
 {
-    fibonode<T> *parent = node->parent;
+    FiboNode<T> *parent = node->parent;
     if (parent != NULL)
     {
-        if (!node->childcut)
-            node->childcut = true;
+        if (!node->childcut_)
+            node->childcut_ = true;
         else
         {
             cut(node, parent);
@@ -291,29 +291,29 @@ void fiboheap<T>::cascadingCut(fibonode<T> *node)
 }
 
 template <class T>
-void fiboheap<T>::increaseKey(fibonode<T> * node, T key)
+void FiboHeap<T>::increaseKey(FiboNode<T> * node, T key)
 {
-    fibonode<T> *parent;
+    FiboNode<T> *parent;
 
     if (max==NULL ||node==NULL)
         return ;
 
-    if ( key<=node->key)
+    if ( key<=node->key_)
     {
         cout << "decrease failed: the new key(" << key <<") "
-             << "is no larger than current key(" << node->key <<")" << endl;
+             << "is no larger than current key(" << node->key_ <<")" << endl;
         return ;
     }
 
-    node->key = key;
+    node->key_ = key;
     parent = node->parent;
-    if (parent!=NULL && node->key > parent->key)
+    if (parent!=NULL && node->key_ > parent->key_)
     {
         cut(node, parent);
         cascadingCut(parent);
     }
 
-    if (node->key > max->key)
+    if (node->key_ > max->key_)
         max = node;
 }
 
