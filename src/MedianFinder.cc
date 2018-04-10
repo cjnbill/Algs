@@ -6,14 +6,13 @@
 #include <queue>
 #include <set>
 
-using namespace std;
 class MedianFinder {
 public:
     /** initialize your data structure here. */
     double median;
     bool isEmpty;
-    priority_queue<double,vector<double>> maxheap;
-    priority_queue<double,vector<double>,greater<double>> minheap;
+    std::priority_queue<double,std::vector<double>> maxheap;
+    std::priority_queue<double,std::vector<double>,std::greater<double>> minheap;
     MedianFinder():isEmpty(true),median(){}
 
     void addNum(int num) {
@@ -48,39 +47,39 @@ public:
             return median;
         else return (minheap.top()+median)/2;
     }
+    static std::vector<double> medianSlidingWindow(std::vector<int>& nums, int k) {
+        auto n=nums.size();
+        std::multiset<int> lo;
+        std::multiset<int> hi;
+        std::vector<double> res;
+
+        for(int i=0;i<n;i++){
+            //delete left side of the window
+            if(i>=k){
+                if(lo.count(nums[i-k])){
+                    lo.erase(lo.find(nums[i-k]));
+                }
+                else if(hi.count(nums[i-k])){
+                    hi.erase(hi.find(nums[i-k]));
+                }
+            }
+            //add the right side
+            lo.insert(nums[i]);
+            hi.insert(*lo.begin());
+            lo.erase(lo.begin());
+            if(lo.size()<hi.size()){
+                lo.insert(*hi.rbegin());
+                hi.erase(--hi.end());
+            }
+            if(i>=k-1){
+                if(hi.size()<lo.size()){
+                    res.push_back(*lo.begin());
+                }
+                else res.push_back(((double)*lo.begin()+*hi.rbegin())/2.0);
+            }
+        }
+        return res;
+    }
 };
 
 
-vector<double> medianSlidingWindow(vector<int>& nums, int k) {
-    auto n=nums.size();
-    multiset<int> lo;
-    multiset<int> hi;
-    vector<double> res;
-
-    for(int i=0;i<n;i++){
-        //delete left side of the window
-        if(i>=k){
-            if(lo.count(nums[i-k])){
-                lo.erase(lo.find(nums[i-k]));
-            }
-            else if(hi.count(nums[i-k])){
-                hi.erase(hi.find(nums[i-k]));
-            }
-        }
-        //add the right side
-        lo.insert(nums[i]);
-        hi.insert(*lo.begin());
-        lo.erase(lo.begin());
-        if(lo.size()<hi.size()){
-            lo.insert(*hi.rbegin());
-            hi.erase(--hi.end());
-        }
-        if(i>=k-1){
-            if(hi.size()<lo.size()){
-                res.push_back(*lo.begin());
-            }
-            else res.push_back(((double)*lo.begin()+*hi.rbegin())/2.0);
-        }
-    }
-    return res;
-}
