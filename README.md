@@ -1,2 +1,3 @@
-# algs
-basic algorithms library
+# ***************algs***************
+
+## Basic algorithms library
