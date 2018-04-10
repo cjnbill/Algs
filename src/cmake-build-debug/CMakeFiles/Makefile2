@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/cjn/ClionProjects/algs/src/cmake-build-debug
 CMakeFiles/algs.dir/all:
 	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/depend
 	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target algs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target algs"
 .PHONY : CMakeFiles/algs.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/algs.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/algs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/algs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/algs.dir/rule

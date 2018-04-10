@@ -57,119 +57,145 @@ include CMakeFiles/algs.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/algs.dir/flags.make
 
-CMakeFiles/algs.dir/main.cpp.o: CMakeFiles/algs.dir/flags.make
-CMakeFiles/algs.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algs.dir/main.cpp.o"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/main.cpp.o -c /Users/cjn/ClionProjects/algs/src/main.cpp
+CMakeFiles/algs.dir/main.cc.o: CMakeFiles/algs.dir/flags.make
+CMakeFiles/algs.dir/main.cc.o: ../main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algs.dir/main.cc.o"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/main.cc.o -c /Users/cjn/ClionProjects/algs/src/main.cc
 
-CMakeFiles/algs.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/main.cpp.i"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/main.cpp > CMakeFiles/algs.dir/main.cpp.i
+CMakeFiles/algs.dir/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/main.cc.i"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/main.cc > CMakeFiles/algs.dir/main.cc.i
 
-CMakeFiles/algs.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/main.cpp.s"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/main.cpp -o CMakeFiles/algs.dir/main.cpp.s
+CMakeFiles/algs.dir/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/main.cc.s"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/main.cc -o CMakeFiles/algs.dir/main.cc.s
 
-CMakeFiles/algs.dir/main.cpp.o.requires:
+CMakeFiles/algs.dir/main.cc.o.requires:
 
-.PHONY : CMakeFiles/algs.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/algs.dir/main.cc.o.requires
 
-CMakeFiles/algs.dir/main.cpp.o.provides: CMakeFiles/algs.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/algs.dir/main.cpp.o.provides
+CMakeFiles/algs.dir/main.cc.o.provides: CMakeFiles/algs.dir/main.cc.o.requires
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cc.o.provides.build
+.PHONY : CMakeFiles/algs.dir/main.cc.o.provides
 
-CMakeFiles/algs.dir/main.cpp.o.provides.build: CMakeFiles/algs.dir/main.cpp.o
-
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.o: CMakeFiles/algs.dir/flags.make
-CMakeFiles/algs.dir/LongestSubwithK.cpp.o: ../LongestSubwithK.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/algs.dir/LongestSubwithK.cpp.o"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/LongestSubwithK.cpp.o -c /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cpp
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/LongestSubwithK.cpp.i"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cpp > CMakeFiles/algs.dir/LongestSubwithK.cpp.i
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/LongestSubwithK.cpp.s"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cpp -o CMakeFiles/algs.dir/LongestSubwithK.cpp.s
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.o.requires:
-
-.PHONY : CMakeFiles/algs.dir/LongestSubwithK.cpp.o.requires
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.o.provides: CMakeFiles/algs.dir/LongestSubwithK.cpp.o.requires
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cpp.o.provides.build
-.PHONY : CMakeFiles/algs.dir/LongestSubwithK.cpp.o.provides
-
-CMakeFiles/algs.dir/LongestSubwithK.cpp.o.provides.build: CMakeFiles/algs.dir/LongestSubwithK.cpp.o
+CMakeFiles/algs.dir/main.cc.o.provides.build: CMakeFiles/algs.dir/main.cc.o
 
 
-CMakeFiles/algs.dir/union_find.cpp.o: CMakeFiles/algs.dir/flags.make
-CMakeFiles/algs.dir/union_find.cpp.o: ../union_find.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/algs.dir/union_find.cpp.o"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/union_find.cpp.o -c /Users/cjn/ClionProjects/algs/src/union_find.cpp
+CMakeFiles/algs.dir/LongestSubwithK.cc.o: CMakeFiles/algs.dir/flags.make
+CMakeFiles/algs.dir/LongestSubwithK.cc.o: ../LongestSubwithK.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/algs.dir/LongestSubwithK.cc.o"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/LongestSubwithK.cc.o -c /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cc
 
-CMakeFiles/algs.dir/union_find.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/union_find.cpp.i"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/union_find.cpp > CMakeFiles/algs.dir/union_find.cpp.i
+CMakeFiles/algs.dir/LongestSubwithK.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/LongestSubwithK.cc.i"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cc > CMakeFiles/algs.dir/LongestSubwithK.cc.i
 
-CMakeFiles/algs.dir/union_find.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/union_find.cpp.s"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/union_find.cpp -o CMakeFiles/algs.dir/union_find.cpp.s
+CMakeFiles/algs.dir/LongestSubwithK.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/LongestSubwithK.cc.s"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/LongestSubwithK.cc -o CMakeFiles/algs.dir/LongestSubwithK.cc.s
 
-CMakeFiles/algs.dir/union_find.cpp.o.requires:
+CMakeFiles/algs.dir/LongestSubwithK.cc.o.requires:
 
-.PHONY : CMakeFiles/algs.dir/union_find.cpp.o.requires
+.PHONY : CMakeFiles/algs.dir/LongestSubwithK.cc.o.requires
 
-CMakeFiles/algs.dir/union_find.cpp.o.provides: CMakeFiles/algs.dir/union_find.cpp.o.requires
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/union_find.cpp.o.provides.build
-.PHONY : CMakeFiles/algs.dir/union_find.cpp.o.provides
+CMakeFiles/algs.dir/LongestSubwithK.cc.o.provides: CMakeFiles/algs.dir/LongestSubwithK.cc.o.requires
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cc.o.provides.build
+.PHONY : CMakeFiles/algs.dir/LongestSubwithK.cc.o.provides
 
-CMakeFiles/algs.dir/union_find.cpp.o.provides.build: CMakeFiles/algs.dir/union_find.cpp.o
+CMakeFiles/algs.dir/LongestSubwithK.cc.o.provides.build: CMakeFiles/algs.dir/LongestSubwithK.cc.o
 
 
-CMakeFiles/algs.dir/Trie.cpp.o: CMakeFiles/algs.dir/flags.make
-CMakeFiles/algs.dir/Trie.cpp.o: ../Trie.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/algs.dir/Trie.cpp.o"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/Trie.cpp.o -c /Users/cjn/ClionProjects/algs/src/Trie.cpp
+CMakeFiles/algs.dir/UnionFind.cc.o: CMakeFiles/algs.dir/flags.make
+CMakeFiles/algs.dir/UnionFind.cc.o: ../UnionFind.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/algs.dir/UnionFind.cc.o"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/UnionFind.cc.o -c /Users/cjn/ClionProjects/algs/src/UnionFind.cc
 
-CMakeFiles/algs.dir/Trie.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/Trie.cpp.i"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/Trie.cpp > CMakeFiles/algs.dir/Trie.cpp.i
+CMakeFiles/algs.dir/UnionFind.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/UnionFind.cc.i"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/UnionFind.cc > CMakeFiles/algs.dir/UnionFind.cc.i
 
-CMakeFiles/algs.dir/Trie.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/Trie.cpp.s"
-	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/Trie.cpp -o CMakeFiles/algs.dir/Trie.cpp.s
+CMakeFiles/algs.dir/UnionFind.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/UnionFind.cc.s"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/UnionFind.cc -o CMakeFiles/algs.dir/UnionFind.cc.s
 
-CMakeFiles/algs.dir/Trie.cpp.o.requires:
+CMakeFiles/algs.dir/UnionFind.cc.o.requires:
 
-.PHONY : CMakeFiles/algs.dir/Trie.cpp.o.requires
+.PHONY : CMakeFiles/algs.dir/UnionFind.cc.o.requires
 
-CMakeFiles/algs.dir/Trie.cpp.o.provides: CMakeFiles/algs.dir/Trie.cpp.o.requires
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cpp.o.provides.build
-.PHONY : CMakeFiles/algs.dir/Trie.cpp.o.provides
+CMakeFiles/algs.dir/UnionFind.cc.o.provides: CMakeFiles/algs.dir/UnionFind.cc.o.requires
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/UnionFind.cc.o.provides.build
+.PHONY : CMakeFiles/algs.dir/UnionFind.cc.o.provides
 
-CMakeFiles/algs.dir/Trie.cpp.o.provides.build: CMakeFiles/algs.dir/Trie.cpp.o
+CMakeFiles/algs.dir/UnionFind.cc.o.provides.build: CMakeFiles/algs.dir/UnionFind.cc.o
+
+
+CMakeFiles/algs.dir/Trie.cc.o: CMakeFiles/algs.dir/flags.make
+CMakeFiles/algs.dir/Trie.cc.o: ../Trie.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/algs.dir/Trie.cc.o"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/Trie.cc.o -c /Users/cjn/ClionProjects/algs/src/Trie.cc
+
+CMakeFiles/algs.dir/Trie.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/Trie.cc.i"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/Trie.cc > CMakeFiles/algs.dir/Trie.cc.i
+
+CMakeFiles/algs.dir/Trie.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/Trie.cc.s"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/Trie.cc -o CMakeFiles/algs.dir/Trie.cc.s
+
+CMakeFiles/algs.dir/Trie.cc.o.requires:
+
+.PHONY : CMakeFiles/algs.dir/Trie.cc.o.requires
+
+CMakeFiles/algs.dir/Trie.cc.o.provides: CMakeFiles/algs.dir/Trie.cc.o.requires
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cc.o.provides.build
+.PHONY : CMakeFiles/algs.dir/Trie.cc.o.provides
+
+CMakeFiles/algs.dir/Trie.cc.o.provides.build: CMakeFiles/algs.dir/Trie.cc.o
+
+
+CMakeFiles/algs.dir/MedianFinder.cc.o: CMakeFiles/algs.dir/flags.make
+CMakeFiles/algs.dir/MedianFinder.cc.o: ../MedianFinder.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/algs.dir/MedianFinder.cc.o"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/algs.dir/MedianFinder.cc.o -c /Users/cjn/ClionProjects/algs/src/MedianFinder.cc
+
+CMakeFiles/algs.dir/MedianFinder.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algs.dir/MedianFinder.cc.i"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cjn/ClionProjects/algs/src/MedianFinder.cc > CMakeFiles/algs.dir/MedianFinder.cc.i
+
+CMakeFiles/algs.dir/MedianFinder.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algs.dir/MedianFinder.cc.s"
+	/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cjn/ClionProjects/algs/src/MedianFinder.cc -o CMakeFiles/algs.dir/MedianFinder.cc.s
+
+CMakeFiles/algs.dir/MedianFinder.cc.o.requires:
+
+.PHONY : CMakeFiles/algs.dir/MedianFinder.cc.o.requires
+
+CMakeFiles/algs.dir/MedianFinder.cc.o.provides: CMakeFiles/algs.dir/MedianFinder.cc.o.requires
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/MedianFinder.cc.o.provides.build
+.PHONY : CMakeFiles/algs.dir/MedianFinder.cc.o.provides
+
+CMakeFiles/algs.dir/MedianFinder.cc.o.provides.build: CMakeFiles/algs.dir/MedianFinder.cc.o
 
 
 # Object files for target algs
 algs_OBJECTS = \
-"CMakeFiles/algs.dir/main.cpp.o" \
-"CMakeFiles/algs.dir/LongestSubwithK.cpp.o" \
-"CMakeFiles/algs.dir/union_find.cpp.o" \
-"CMakeFiles/algs.dir/Trie.cpp.o"
+"CMakeFiles/algs.dir/main.cc.o" \
+"CMakeFiles/algs.dir/LongestSubwithK.cc.o" \
+"CMakeFiles/algs.dir/UnionFind.cc.o" \
+"CMakeFiles/algs.dir/Trie.cc.o" \
+"CMakeFiles/algs.dir/MedianFinder.cc.o"
 
 # External object files for target algs
 algs_EXTERNAL_OBJECTS =
 
-algs: CMakeFiles/algs.dir/main.cpp.o
-algs: CMakeFiles/algs.dir/LongestSubwithK.cpp.o
-algs: CMakeFiles/algs.dir/union_find.cpp.o
-algs: CMakeFiles/algs.dir/Trie.cpp.o
+algs: CMakeFiles/algs.dir/main.cc.o
+algs: CMakeFiles/algs.dir/LongestSubwithK.cc.o
+algs: CMakeFiles/algs.dir/UnionFind.cc.o
+algs: CMakeFiles/algs.dir/Trie.cc.o
+algs: CMakeFiles/algs.dir/MedianFinder.cc.o
 algs: CMakeFiles/algs.dir/build.make
 algs: CMakeFiles/algs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable algs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cjn/ClionProjects/algs/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable algs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -177,10 +203,11 @@ CMakeFiles/algs.dir/build: algs
 
 .PHONY : CMakeFiles/algs.dir/build
 
-CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/main.cpp.o.requires
-CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/LongestSubwithK.cpp.o.requires
-CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/union_find.cpp.o.requires
-CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/Trie.cpp.o.requires
+CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/main.cc.o.requires
+CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/LongestSubwithK.cc.o.requires
+CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/UnionFind.cc.o.requires
+CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/Trie.cc.o.requires
+CMakeFiles/algs.dir/requires: CMakeFiles/algs.dir/MedianFinder.cc.o.requires
 
 .PHONY : CMakeFiles/algs.dir/requires
 

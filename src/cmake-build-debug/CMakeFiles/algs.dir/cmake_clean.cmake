@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algs.dir/main.cpp.o"
-  "CMakeFiles/algs.dir/LongestSubwithK.cpp.o"
-  "CMakeFiles/algs.dir/union_find.cpp.o"
-  "CMakeFiles/algs.dir/Trie.cpp.o"
+  "CMakeFiles/algs.dir/main.cc.o"
+  "CMakeFiles/algs.dir/LongestSubwithK.cc.o"
+  "CMakeFiles/algs.dir/UnionFind.cc.o"
+  "CMakeFiles/algs.dir/Trie.cc.o"
+  "CMakeFiles/algs.dir/MedianFinder.cc.o"
   "algs.pdb"
   "algs"
 )

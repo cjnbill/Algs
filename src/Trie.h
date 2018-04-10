@@ -12,28 +12,28 @@ using namespace std;
 class TrieNode{
 public:
     TrieNode();
-    vector<TrieNode*> child;
-    bool isWord;
+    vector<TrieNode*> child_;
+    bool is_word_;
 };
 class Trie {
-    TrieNode* root;
+    TrieNode* root_;
 public:
     /** Initialize your data structure here. */
     Trie();
 
     /** Inserts a word into the trie. */
-    void insert(string& word);
+    void Insert(string &word);
 
     /** Returns if the word is in the trie. */
-    bool search(string& word);
+    bool Search(string &word);
 
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
-    bool startsWith(string& prefix);
+    bool StartWith(string &prefix);
 
 
     /** Returns word end where in the trie. */
-    TrieNode* searchWordNode(string& word);
+    TrieNode* SearchWordNode(string &word);
 };
 
 /**

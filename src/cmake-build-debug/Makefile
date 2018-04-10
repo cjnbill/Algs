@@ -123,113 +123,140 @@ algs/fast:
 	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/build
 .PHONY : algs/fast
 
-LongestSubwithK.o: LongestSubwithK.cpp.o
+LongestSubwithK.o: LongestSubwithK.cc.o
 
 .PHONY : LongestSubwithK.o
 
 # target to build an object file
-LongestSubwithK.cpp.o:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cpp.o
-.PHONY : LongestSubwithK.cpp.o
+LongestSubwithK.cc.o:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cc.o
+.PHONY : LongestSubwithK.cc.o
 
-LongestSubwithK.i: LongestSubwithK.cpp.i
+LongestSubwithK.i: LongestSubwithK.cc.i
 
 .PHONY : LongestSubwithK.i
 
 # target to preprocess a source file
-LongestSubwithK.cpp.i:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cpp.i
-.PHONY : LongestSubwithK.cpp.i
+LongestSubwithK.cc.i:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cc.i
+.PHONY : LongestSubwithK.cc.i
 
-LongestSubwithK.s: LongestSubwithK.cpp.s
+LongestSubwithK.s: LongestSubwithK.cc.s
 
 .PHONY : LongestSubwithK.s
 
 # target to generate assembly for a file
-LongestSubwithK.cpp.s:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cpp.s
-.PHONY : LongestSubwithK.cpp.s
+LongestSubwithK.cc.s:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/LongestSubwithK.cc.s
+.PHONY : LongestSubwithK.cc.s
 
-Trie.o: Trie.cpp.o
+MedianFinder.o: MedianFinder.cc.o
+
+.PHONY : MedianFinder.o
+
+# target to build an object file
+MedianFinder.cc.o:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/MedianFinder.cc.o
+.PHONY : MedianFinder.cc.o
+
+MedianFinder.i: MedianFinder.cc.i
+
+.PHONY : MedianFinder.i
+
+# target to preprocess a source file
+MedianFinder.cc.i:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/MedianFinder.cc.i
+.PHONY : MedianFinder.cc.i
+
+MedianFinder.s: MedianFinder.cc.s
+
+.PHONY : MedianFinder.s
+
+# target to generate assembly for a file
+MedianFinder.cc.s:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/MedianFinder.cc.s
+.PHONY : MedianFinder.cc.s
+
+Trie.o: Trie.cc.o
 
 .PHONY : Trie.o
 
 # target to build an object file
-Trie.cpp.o:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cpp.o
-.PHONY : Trie.cpp.o
+Trie.cc.o:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cc.o
+.PHONY : Trie.cc.o
 
-Trie.i: Trie.cpp.i
+Trie.i: Trie.cc.i
 
 .PHONY : Trie.i
 
 # target to preprocess a source file
-Trie.cpp.i:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cpp.i
-.PHONY : Trie.cpp.i
+Trie.cc.i:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cc.i
+.PHONY : Trie.cc.i
 
-Trie.s: Trie.cpp.s
+Trie.s: Trie.cc.s
 
 .PHONY : Trie.s
 
 # target to generate assembly for a file
-Trie.cpp.s:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cpp.s
-.PHONY : Trie.cpp.s
+Trie.cc.s:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/Trie.cc.s
+.PHONY : Trie.cc.s
 
-main.o: main.cpp.o
+UnionFind.o: UnionFind.cc.o
+
+.PHONY : UnionFind.o
+
+# target to build an object file
+UnionFind.cc.o:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/UnionFind.cc.o
+.PHONY : UnionFind.cc.o
+
+UnionFind.i: UnionFind.cc.i
+
+.PHONY : UnionFind.i
+
+# target to preprocess a source file
+UnionFind.cc.i:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/UnionFind.cc.i
+.PHONY : UnionFind.cc.i
+
+UnionFind.s: UnionFind.cc.s
+
+.PHONY : UnionFind.s
+
+# target to generate assembly for a file
+UnionFind.cc.s:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/UnionFind.cc.s
+.PHONY : UnionFind.cc.s
+
+main.o: main.cc.o
 
 .PHONY : main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cpp.o
-.PHONY : main.cpp.o
+main.cc.o:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cc.o
+.PHONY : main.cc.o
 
-main.i: main.cpp.i
+main.i: main.cc.i
 
 .PHONY : main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cpp.i
-.PHONY : main.cpp.i
+main.cc.i:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cc.i
+.PHONY : main.cc.i
 
-main.s: main.cpp.s
+main.s: main.cc.s
 
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-union_find.o: union_find.cpp.o
-
-.PHONY : union_find.o
-
-# target to build an object file
-union_find.cpp.o:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/union_find.cpp.o
-.PHONY : union_find.cpp.o
-
-union_find.i: union_find.cpp.i
-
-.PHONY : union_find.i
-
-# target to preprocess a source file
-union_find.cpp.i:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/union_find.cpp.i
-.PHONY : union_find.cpp.i
-
-union_find.s: union_find.cpp.s
-
-.PHONY : union_find.s
-
-# target to generate assembly for a file
-union_find.cpp.s:
-	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/union_find.cpp.s
-.PHONY : union_find.cpp.s
+main.cc.s:
+	$(MAKE) -f CMakeFiles/algs.dir/build.make CMakeFiles/algs.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:
@@ -243,15 +270,18 @@ help:
 	@echo "... LongestSubwithK.o"
 	@echo "... LongestSubwithK.i"
 	@echo "... LongestSubwithK.s"
+	@echo "... MedianFinder.o"
+	@echo "... MedianFinder.i"
+	@echo "... MedianFinder.s"
 	@echo "... Trie.o"
 	@echo "... Trie.i"
 	@echo "... Trie.s"
+	@echo "... UnionFind.o"
+	@echo "... UnionFind.i"
+	@echo "... UnionFind.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... union_find.o"
-	@echo "... union_find.i"
-	@echo "... union_find.s"
 .PHONY : help
 
 

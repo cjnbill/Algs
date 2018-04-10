@@ -12,7 +12,7 @@ using namespace std;
 int lengthOfLongestSubstringKDistinct(string s, int k) {
     if(s.empty()||k<0)
         return 0;
-    int n=s.size();
+    auto n=s.size();
     vector<int> m(256);
     int l=0,r=0,cnt=0,res=0;
     while(r<n){
