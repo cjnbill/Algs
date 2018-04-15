@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-#include "MedianFinder.cc"
 #include "QuickSortAndSelect.cpp"
 #include "StringSerializer.h"
 
