@@ -2,13 +2,16 @@
 using namespace std;
 
 #include "MedianFinder.cc"
+#include "QuickSortAndSelect.cpp"
+#include "StringSerializer.h"
 
 int main()
 {
-    MedianFinder mf;
-    mf.addNum(1);
-    mf.addNum(2);
-    cout<<mf.findMedian()<<endl;
-    mf.addNum(3);
-    cout<<mf.findMedian()<<endl;
+    vector<string> strs={"abc","cbaa","a"};
+    auto encoded_str=StringSerializer::Encode(strs);
+    cout<<encoded_str<<endl;
+    auto decoded_strs=StringSerializer::Decode(encoded_str);
+    for(auto str:decoded_strs){
+        cout<<str<<endl;
+    }
 }
