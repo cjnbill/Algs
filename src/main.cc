@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "QuickSortAndSelect.cpp"
+#include "QuickSortAndSelect.cc"
 #include "StringSerializer.h"
 
 int main()
