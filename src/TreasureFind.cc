@@ -19,7 +19,7 @@ public:
     int ID;
     pair<Room*, Room*> rooms;
     bool locked;
-    Key* key;
+    Key* key_;
 };
 
 class Room {
@@ -42,7 +42,7 @@ int maze(Room* start){
             for(int i=0;i<sz;i++){
                 auto cur=locked_doors.front();
                 locked_doors.pop();
-                if(cur->key->found){
+                if(cur->key_->found){
                     cur->locked=false;
                 }
                 if(cur->locked){
@@ -64,17 +64,17 @@ int maze(Room* start){
                 key->found=true;
             }
             for(auto door:t_room->doors){
-                if(door->key->found){
+                if(door->key_->found){
                     door->locked=false;
                 } else{
                     locked_doors.push(door);
                 }
                 auto r1=door->rooms.first,r2=door->rooms.second;
-                if(r1->ID=t_room->ID&&!r2->visited){
+                if(r1->ID==t_room->ID&&!r2->visited){
                     rooms.push(r2);
                     r2->visited;
                 }
-                if((r2->ID=t_room->ID&&!r1->visited){
+                if(r2->ID==t_room->ID&&!r1->visited){
                     rooms.push(r1);
                     r1->visited;
                 }

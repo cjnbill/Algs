@@ -3,6 +3,7 @@
 //
 #include <vector>
 #include <unordered_set>
+#include <string>
 
 using namespace std;
 
@@ -19,14 +20,14 @@ class Robot {
     // Clean the current cell.
     void Clean();
     vector<vector<int>> dirs={{0,1},{1,0},{-1,0},{0,-1}};
-    void DfsClean(int x,int y,int d,unordered_set<pair<int,int>>& visited){
+    void DfsClean(int x,int y,int d,unordered_set<string>& visited){
         Clean();
-        visited.insert({x,y});
-        for(int i=0;i<4;i++){
-            if(i!=0)TurnRight(1);
-            int nd=(d+i)%4;
+        visited.insert(to_string(x)+":"+to_string(y));
+        for(int k=0;k<4;k++){
+            if(k!=0)TurnRight(1);
+            int nd=(d+k)%4;
             int i=x+dirs[nd][0],j=y+dirs[nd][1];
-            if(visited.count({i,j}))
+            if(visited.count(to_string(i)+":"+to_string(j)))
                 continue;
             if(Move()){
                 DfsClean(i,j,nd,visited);
@@ -38,7 +39,7 @@ class Robot {
                 TurnRight(2);
             }
             else{
-                visited.insert({i,j});
+                visited.insert(to_string(i)+":"+to_string(j));
             }
         }
         //after 4 loops, it still need to turn right 1
