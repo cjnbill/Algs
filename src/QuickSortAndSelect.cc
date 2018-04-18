@@ -6,17 +6,17 @@
 
 //After partition, left side is bigger than pivot, right side is smaller than pivot
 //return the position of pivot
-static int Partition(std::vector<int>& nums,int left,int right){
-    int l=left,r=right,pivot=nums[l];
-    while(l<=r){
-        if(nums[l]<pivot&&nums[r]>pivot)
-            std::swap(nums[l++], nums[r--]);
-        if(nums[l]>=pivot)
-            l++;
-        if(nums[r]<=pivot)
+static int Partition(std::vector<int>& nums,int l,int r){
+    int pivot=nums[l];
+    while(l<r){
+        while(l<r&&nums[r]>=pivot)
             r--;
+        nums[l]=nums[r];
+        while(l<r&&nums[l]<=pivot)
+            l++;
+        nums[r]=nums[l];
     }
-    std::swap(nums[left],nums[r]);
+    nums[l]=pivot;
     return r;
 }
 
