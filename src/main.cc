@@ -1,16 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#include "QuickSortAndSelect.cc"
-#include "StringSerializer.h"
-
+#include "Stack/BasicCalculator.cc"
 int main()
 {
-    vector<string> strs={"abc","cbaa","a"};
-    auto encoded_str=StringSerializer::Encode(strs);
-    cout<<encoded_str<<endl;
-    auto decoded_strs=StringSerializer::Decode(encoded_str);
-    for(auto str:decoded_strs){
-        cout<<str<<endl;
-    }
+    cout<<BasicCalculator2("1+2*8-9/10+1");
 }

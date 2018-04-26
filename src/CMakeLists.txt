@@ -3,6 +3,9 @@ project(algs)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algs main.cc LongestSubwithK.cc LongestSubwithK.h UnionFind.cc
-        UnionFind.h Trie.cc Trie.h SegmentTree.cc SegmentTree.h MedianFinder.cc
-        FiboHeap QuickSortAndSelect.cc StringSerializer.cc StringSerializer.h SweepRobot.cc TreasureFind.cc GuessNumber.cc RandomSelectFromRectangle.cc ChairDistance.cc DfsProblems.cc BfsProblems.cc BasicCalculator.cc SnakeGame.cc SnakeGame.h ReorgStr.cc)
+add_executable(algs main.cc SlidingWindow/LongestSubwithK.cc SlidingWindow/LongestSubwithK.h Graph/UnionFind/UnionFind.cc
+        Graph/UnionFind/UnionFind.h Trie/Trie.cc Trie/Trie.h SegmentTree Heap/MedianFinder.cc
+        FiboHeap BinarySearch/QuickSortAndSelect.cc String/StringSerializer.cc String/StringSerializer.h
+        Graph/DFS/SweepRobot.cc Graph/BFS/TreasureFind.cc Math/GuessNumber.cc Math/RandomSelectFromRectangle.cc
+        Heap/ChairDistance.cc Graph/DFS/DfsProblems.cc Graph/BFS/BfsProblems.cc Stack/BasicCalculator.cc Graph/DFS/SnakeGame.cc
+        Graph/DFS/SnakeGame.h Heap/ReorgStr.cc)
