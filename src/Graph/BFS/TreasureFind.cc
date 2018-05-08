@@ -4,6 +4,8 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <unordered_set>
+#include <iostream>
 using namespace std;
 
 class Door;
@@ -12,13 +14,12 @@ class Key {
 public:
     int ID;
     Door* door;
-    bool found = false;
 };
 class Door {
 public:
     int ID;
     pair<Room*, Room*> rooms;
-    bool locked;
+    bool visited=false;
     Key* key_;
 };
 
@@ -31,54 +32,65 @@ public:
     bool visited = false;
 };
 
-int maze(Room* start){
-    stack<Room*> rooms;
-    queue<Door*> locked_doors;
-    rooms.push(start);
-    start->visited=true;
-    while(!rooms.empty()||!locked_doors.empty()){
-        if(rooms.empty()){
-            int sz=locked_doors.size();
-            for(int i=0;i<sz;i++){
-                auto cur=locked_doors.front();
-                locked_doors.pop();
-                if(cur->key_->found){
-                    cur->locked=false;
-                }
-                if(cur->locked){
-                    locked_doors.push(cur);
-                } else{
-                    auto r1=cur->rooms.first,r2=cur->rooms.second;
-                    if(r1->visited&&!r2->visited)
-                        r2->visited=true;
-                    if(!r1->visited&&r2->visited)
-                        r1->visited=true;
-                }
-            }
+/*
+ * set of key
+ * set of locked doors
+ * queue of doors which are going to be visited
+ *
+ *
+
+ */
+static void AddKeys(vector<Key*> keys,unordered_set<Key*>& keys_found,unordered_set<Door*>& locked_doors,queue<Door*>& q){
+    for(auto k:keys){
+        if(locked_doors.count(k->door)) {
+            locked_doors.erase(k->door);
+            q.push(k->door);
         }
-        if(!rooms.empty()){
-            auto t_room=rooms.top();rooms.pop();
-            if(t_room->hasTreasure)
-                return t_room->ID;
-            for(auto key:t_room->keys){
-                key->found=true;
-            }
-            for(auto door:t_room->doors){
-                if(door->key_->found){
-                    door->locked=false;
-                } else{
-                    locked_doors.push(door);
-                }
-                auto r1=door->rooms.first,r2=door->rooms.second;
-                if(r1->ID==t_room->ID&&!r2->visited){
-                    rooms.push(r2);
-                    r2->visited;
-                }
-                if(r2->ID==t_room->ID&&!r1->visited){
-                    rooms.push(r1);
-                    r1->visited;
-                }
-            }
+        keys_found.insert(k);
+    }
+}
+static void AddDoors(vector<Door*> doors,unordered_set<Key*>& keys_found,unordered_set<Door*>& locked_doors,queue<Door*>& q){
+    for(auto d:doors){
+        if(d->visited)
+            continue;
+        if(keys_found.count(d->key_)){
+            q.push(d);
+        } else{
+            locked_doors.insert(d);
         }
     }
+}
+static int FindTreasure(Room* start){
+    unordered_set<Key*> keys_found;
+    unordered_set<Door*> locked_doors;
+    queue<Door*> q;
+    if(start->hasTreasure)
+        return start->ID;
+    AddKeys(start->keys, keys_found, locked_doors, q);
+    AddDoors(start->doors, keys_found, locked_doors, q);
+    while(!q.empty()){
+        auto t_door=q.front();q.pop();
+        auto room1=t_door->rooms.first,room2=t_door->rooms.second;
+        if(room1->visited)
+            continue;
+        else {
+            if(room1->hasTreasure)
+                return room1->ID;
+            AddKeys(room1->keys, keys_found, locked_doors, q);
+            AddDoors(room1->doors, keys_found, locked_doors, q);
+        }
+        if(room2->visited)
+            continue;
+        else {
+            if(room2->hasTreasure)
+                return room2->ID;
+            AddKeys(room2->keys, keys_found, locked_doors, q);
+            AddDoors(room2->doors, keys_found, locked_doors, q);
+        }
+    }
+}
+
+static int test(){
+    auto r1=new Room();
+    cout<< FindTreasure(r1);
 }
