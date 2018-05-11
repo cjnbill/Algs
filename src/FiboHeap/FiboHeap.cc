@@ -72,7 +72,7 @@ FiboHeap<T>::~FiboHeap()
 {
 }
 
-//add node to the left of root
+//add TreeNode to the left of root
 template <class T>
 void FiboHeap<T>::addNode(FiboNode<T> *node, FiboNode<T> *root)
 {
@@ -82,7 +82,7 @@ void FiboHeap<T>::addNode(FiboNode<T> *node, FiboNode<T> *root)
     root->left        = node;
 }
 
-//insert node to the heap
+//insert TreeNode to the heap
 template <class T>
 void FiboHeap<T>::insert(FiboNode<T> *node)
 {
@@ -111,7 +111,7 @@ FiboNode<T>* FiboHeap<T>::getMax()
     return max;
 }
 
-//get the max node with it's subtree
+//get the max TreeNode with it's subtree
 template <class T>
 FiboNode<T>* FiboHeap<T>::extractMax()
 {
@@ -245,7 +245,7 @@ void FiboHeap<T>::removeMax()
     delete m;
 }
 
-//change the node's degree
+//change the TreeNode's degree
 template <class T>
 void FiboHeap<T>::renewDegree(FiboNode<T> *node, int degree)
 {
@@ -253,12 +253,12 @@ void FiboHeap<T>::renewDegree(FiboNode<T> *node, int degree)
 }
 
 
-//cut node off the parent and move it to the root link list
+//cut TreeNode off the parent and move it to the root link list
 template <class T>
 void FiboHeap<T>::cut(FiboNode<T> *node, FiboNode<T> *parent)
 {
     removeNode(node);
-    //renewDegree(parent, node->degree);
+    //renewDegree(parent, TreeNode->degree);
     renewDegree(parent, parent->degree_-1);
 
     if (node == node->right)

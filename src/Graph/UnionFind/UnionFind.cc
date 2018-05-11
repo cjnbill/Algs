@@ -4,6 +4,9 @@
 
 #include "UnionFind.h"
 #include <vector>
+#include <unordered_map>
+#include <string>
+
 using namespace std;
 
 UnionFind::UnionFind(std::vector<std::vector<char>>& grid){
@@ -58,3 +61,45 @@ int NumOfIslands(vector<vector<char>> &grid) {
     }
     return uf->count_;
 }
+
+
+class SentenceSimilarity {
+public:
+    class union_find{
+    public:
+        unordered_map<string,string> father;
+
+        string Find(string x){
+            if(father[x]==x)
+                return x;
+            father[x]=Find(father[x]);
+            return father[x];
+        }
+        void Union(string a,string b){
+            auto root_a=Find(a);
+            auto root_b=Find(b);
+            if(root_a!=root_b){
+                father[root_a]=root_b;
+            }
+        }
+    };
+    bool areSentencesSimilarTwo(vector<string>& words1, vector<string>& words2, vector<pair<string, string>> pairs) {
+        int m=words1.size(),n=words2.size();
+        if(m!=n)return false;
+        if(!m)return true;
+        union_find uf;
+        for(auto p:pairs){
+            if(!uf.father.count(p.first))
+                uf.father[p.first]=p.first;
+            if(!uf.father.count(p.second))
+                uf.father[p.second]=p.second;
+            uf.Union(p.first,p.second);
+        }
+        for(int i=0;i<m;i++){
+            auto root_a=uf.Find(words1[i]);
+            auto root_b=uf.Find(words2[i]);
+            if(root_a!=root_b)return false;
+        }
+        return true;
+    }
+};
