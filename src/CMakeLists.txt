@@ -8,4 +8,4 @@ add_executable(algs main.cc SlidingWindow/LongestSubwithK.cc SlidingWindow/Longe
         FiboHeap BinarySearch/QuickSortAndSelect.cc String/StringSerializer.cc String/StringSerializer.h
         Graph/DFS/SweepRobot.cc Graph/BFS/TreasureFind.cc Math/GuessNumber.cc Math/RandomSelectFromRectangle.cc
         Heap/ChairDistance.cc Graph/DFS/DfsProblems.cc Graph/BFS/BfsProblems.cc Stack/BasicCalculator.cc Graph/DFS/SnakeGame.cc
-        Graph/DFS/SnakeGame.h Heap/ReorgStr.cc DP/Game.cpp Math/MooreVote.cpp Heap/BalancedTree.cpp Tree/TreeProblems.cpp)
+        Graph/DFS/SnakeGame.h Heap/ReorgStr.cc DP/Game.cpp Math/MooreVote.cpp Heap/BalancedTree.cpp Tree/TreeProblems.cpp DP/DPProblems.cpp HashMap/HashMapProblems.cpp Design/Iterator.cpp)

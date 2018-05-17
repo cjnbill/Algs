@@ -202,4 +202,51 @@ static int shortestDistance(vector<vector<int>>& grid) {
     return res == INT_MAX ? -1 : res;
 }
 
+//815. Bus Routes
+static int numBusesToDestination(vector<vector<int>>& routes, int S, int T) {
+    if(S==T)
+        return 0;
+    //build stop to routes mapping
+    unordered_map<int,unordered_set<int>> s2r;
+    for(int i=0;i<routes.size();i++){
+        for(int j=0;j<routes[i].size();j++){
+            s2r[routes[i][j]].insert(i);
+        }
+    }
+    //build graph
+    unordered_map<int,unordered_set<int>> graph;
+    for(int i=0;i<routes.size();i++){
+        for(int j=0;j<routes[i].size();j++){
+            for(auto r:s2r[routes[i][j]]){
+                if(r!=i)
+                    graph[i].insert(r);
+            }
+        }
+    }
 
+    queue<int> q;
+    unordered_set<int> targets(s2r[T].begin(),s2r[T].end());
+    unordered_set<int> visited;
+    for(auto i:s2r[S]){
+        q.push(i);
+        visited.insert(i);
+    }
+    int dist=0;
+    while(!q.empty()){
+        dist++;
+        int sz=q.size();
+        for(int i=0;i<sz;i++){
+            auto t=q.front();q.pop();
+            if(targets.count(t)){
+                return dist;
+            }
+            for(auto neibor:graph[t]){
+                if(!visited.count(neibor)){
+                    q.push(neibor);
+                    visited.insert(neibor);
+                }
+            }
+        }
+    }
+    return -1;
+}
