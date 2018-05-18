@@ -82,3 +82,50 @@ private:
     stack<int> s2;
 };
 
+
+//BST Iterator
+
+/**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class BSTIterator {
+public:
+    BSTIterator(TreeNode *root) {
+        p=root;
+    }
+
+    /** @return whether we have a next smallest number */
+    bool hasNext() {
+        while(p){
+            s.push(p);
+            p=p->left;
+        }
+        return !s.empty();
+    }
+
+    /** @return the next smallest number */
+    int next() {
+        if(!hasNext()){
+            return -1;
+        }
+        auto t=s.top();s.pop();
+        p=t->right;
+        return t->val;
+    }
+private:
+    stack<TreeNode*> s;
+    TreeNode* p;
+};
+
+/**
+ * Your BSTIterator will be called like this:
+ * BSTIterator i = BSTIterator(root);
+ * while (i.hasNext()) cout << i.next();
+ */
+
