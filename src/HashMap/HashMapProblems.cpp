@@ -114,3 +114,24 @@ public:
         return true;
     }
 };
+
+//205. Isomorphic Strings
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        if(s.size()!=t.size())
+            return false;
+        return helper(s,t)&&helper(t,s);
+    }
+    bool helper(string s,string t){
+        unordered_map<char,char> m1;
+        for(int i=0;i<s.size();i++){
+            if(m1.count(s[i])){
+                if(m1[s[i]]!=t[i])
+                    return false;
+            }
+            m1[s[i]]=t[i];
+        }
+        return true;
+    }
+};

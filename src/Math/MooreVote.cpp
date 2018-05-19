@@ -3,6 +3,8 @@
 //
 #include <vector>
 using namespace std;
+
+//每次删除三个不相同的数，最后出现次数超过1/3的数会留下来，然后在验证是否真的大于1/3，这个思想可以推广到出现次数超过1/k次的元素有哪些
 class MooreVote {
 public:
     vector<int> majorityElement(vector<int>& nums) {
@@ -13,6 +15,7 @@ public:
             else if (a ==n) ++cn;
             else if (cm == 0) m = a, cm = 1;
             else if (cn == 0) n = a, cn = 1;
+            //delete (m,n,a)
             else --cm, --cn;
         }
         cm = cn = 0;

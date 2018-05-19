@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <string>
 #include "Graph/BFS/TreasureFind.cc"
+#include "BinarySearch/KthMissingNumber.cpp"
 using namespace std;
 
 struct Node{
@@ -75,18 +76,6 @@ vector<vector<int>> gen_table(int n){
 
 int main()
 {
-    /*
-    Tree* t= new Tree();
-    t->m["1"]=new Node("1");
-    t->root=t->m["1"];
-    t->birth("1","2");
-    t->birth("1","3");
-    t->birth("2","4");
-    t->birth("2","5");
-    t->death("1");
-    auto res=t->getOrderOfSuccession();
-    for(auto i:res)
-        cout<<i<<endl;
-    */
-    test();
+    vector<int> nums={2,7};
+    cout<<countingSort(nums,2,0,2);
 }

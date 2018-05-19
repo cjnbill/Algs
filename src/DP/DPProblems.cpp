@@ -10,7 +10,7 @@ using namespace std;
 //dp[i][j] is the max score for interval from index i to j
 //         1.pick the left ,then chose min from next round
 //         2.pick the right, then chose min from next round
-bool PredictTheWinner(vector<int>& nums) {
+static bool PredictTheWinner(vector<int>& nums) {
     int n=nums.size();
     vector<vector<int>> dp(n,vector<int>(n,0));
     for(int i=0;i<n;i++)

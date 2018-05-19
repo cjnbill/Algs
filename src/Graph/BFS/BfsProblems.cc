@@ -104,7 +104,7 @@ static pair<int,int> BikePerson(vector<vector<int>>& grid, pair<int,int> person)
             if(grid[i][j]==0) {
                 q.push({pair2str({i,j}),{i, j}});
                 auto key=pair2str({i,j});
-                visited[key].insert({i,j});
+                visited[key].insert(pair2str({i,j}));
             }
         }
     }
