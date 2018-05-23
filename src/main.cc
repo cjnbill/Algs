@@ -76,6 +76,7 @@ vector<vector<int>> gen_table(int n){
 
 int main()
 {
-    vector<int> nums={2,7};
-    cout<<countingSort(nums,2,0,2);
+    vector<int> nums={2,3,4,7,10};
+    cout<<kthMissingHelper(nums,0,4,3)<<endl;
+    cout<<kthMissingHelper(nums,2,3,2)<<endl;
 }

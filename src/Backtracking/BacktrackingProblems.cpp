@@ -32,3 +32,36 @@ public:
         return false;
     }
 };
+
+class GenAbbr {
+private:
+    void generateAbbreviations(vector<string>& result, string word, int begin) {
+        int size = word.size(); // size of word changes during the abbreviation process; need to recalculate evey time
+
+        if (begin >= size) {
+            result.push_back(word);
+            return;
+        }
+
+        // No abbreviations
+        result.push_back(word);
+
+        // Abbreviations size from 1 to size-begin
+        for (int i = 1; i <= size-begin; i++) { // i is the abbreviation size
+            string abbr = to_string(i);
+            int abbr_size = abbr.size();
+            for (int j = begin; j <= size-i; j++) { // j is the location of abbreviations
+                string post = i+j < size ? word.substr(i+j) : "";
+                generateAbbreviations(result, word.substr(0, j) + abbr + post, j+abbr_size+1);
+            }
+        }
+    }
+
+public:
+    vector<string> generateAbbreviations(string word) {
+        vector<string> result;
+        generateAbbreviations(result, word, 0);
+
+        return result;
+    }
+};

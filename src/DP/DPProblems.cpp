@@ -55,3 +55,70 @@ static int checkRecord(int n) {
     }
     return ((A[n - 1] + P[n - 1]) % M + L[n - 1]) % M;
 }
+
+//dp[i][j]=dp[i-1][j]+dp[i][j-1]
+class UniquePaths {
+public:
+    int uniquePaths(int m, int n) {
+        if(m==0||n==0)
+            return 0;
+        //dp[i][j]=dp[i-1][j]+dp[i][j-1]
+        vector<int> dp(n,1);
+        for(int i=1;i<m;i++){
+            for(int j=1;j<n;j++){
+                dp[j]=dp[j]+dp[j-1];
+            }
+        }
+        return dp[n-1];
+    }
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        int m=obstacleGrid.size(),n=obstacleGrid[0].size();
+        vector<int> dp(n,0);
+        for(int i=0;i<n;i++){
+            if(obstacleGrid[0][i]==1){
+                dp[i]=0;
+                break;
+            }
+            else dp[i]=1;
+        }
+        int lowbound=INT_MAX;
+        for(int i=0;i<m;i++){
+            if(obstacleGrid[i][0]==1){
+                lowbound=i;
+                break;
+            }
+        }
+
+        for(int i=1;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(j==0){
+                    if(i>=lowbound)
+                        dp[j]=0;
+                }
+                if(!obstacleGrid[i][j])
+                    dp[j]+=dp[j-1];
+                else dp[j]=0;
+            }
+        }
+        return dp.back();
+    }
+};
+
+//dp[i]=OR(dp[j]&&j+nums[j]>=i )for all j<i
+class JumpGame {
+public:
+    bool canJump(vector<int>& nums) {
+        int n=nums.size();
+        vector<bool> dp(n,false);
+        dp[0]=true;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){
+                if(dp[j]&&j+nums[j]>=i){
+                    dp[i]=true;
+                    break;
+                }
+            }
+        }
+        return dp.back();
+    }
+};

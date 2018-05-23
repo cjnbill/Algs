@@ -3,17 +3,30 @@
 //
 
 #include <vector>
+#include <iostream>
 using namespace std;
 
-static int countingSort(vector<int> arr, int k, int s, int e) {
-    int mid = s + ((e - s) / 2);
-    if (mid == s) {
-        return arr[mid] + 1;
+static int kthMissingHelper(vector<int>& arr, int low, int high, int k){
+    if(low==high-1){
+        int numRange = arr[high] - arr[low];
+        int numPresent = high - low;
+        int totalMissing = numRange - numPresent;
+        if(k > totalMissing)
+            return -1;
+        return arr[low]+k;
     }
-    int i1 =   arr[mid]-((mid - s) + arr[s]);
-    if (i1 >= (k + 1)) {
-        return countingSort(arr, k, s, mid);
-    } else {
-        return countingSort(arr, k - i1, mid, e);
-    }
+    int middle = (low + high)/2;
+    int missingCountInLeft = (arr[middle] - arr[low]) - (middle - low);
+
+
+    if(missingCountInLeft >= k)
+        return kthMissingHelper(arr, low, middle, k);
+    else
+        return kthMissingHelper(arr, middle, high, k - (missingCountInLeft));
 }
+
+static int findKthMissing(vector<int>& arr, int k){
+    return kthMissingHelper(arr, 0, arr.size()-1, k);
+}
+
+
