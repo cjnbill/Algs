@@ -48,30 +48,7 @@ public:
 
 };
 
-vector<vector<int>> gen_table(int n){
-    if(n<0)
-        return {};
-    vector<vector<int>> table(n,vector<int>(n,-1));
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            auto color=rand()%3;
-            if(i<2&&j<2) {
-                table[i][j] = color;
-                continue;
-            }
 
-            bool flag =  false;
-            while(!flag){
-                if((j>=2&&(table[i][j-1]==color&&table[i][j-2]==color))
-                   ||(i>=2&&(table[i-1][j]==color&&table[i-2][j]==color)))
-                    color=rand()%3;
-                else flag=true;
-            }
-            table[i][j]=color;
-        }
-    }
-    return table;
-}
 
 
 int main()

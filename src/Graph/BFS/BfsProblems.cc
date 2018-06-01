@@ -102,9 +102,9 @@ static pair<int,int> BikePerson(vector<vector<int>>& grid, pair<int,int> person)
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             if(grid[i][j]==0) {
-                q.push({pair2str({i,j}),{i, j}});
                 auto key=pair2str({i,j});
-                visited[key].insert(pair2str({i,j}));
+                q.push({key,{i, j}});
+                visited[key].insert(key);
             }
         }
     }
@@ -127,6 +127,22 @@ static pair<int,int> BikePerson(vector<vector<int>>& grid, pair<int,int> person)
     //return pos[person.first][person.second];
     return {};
 }
+/*
+ * def shorstOverallDistance(people, bikes):#coordinations of N people and N bikes
+    if not people:
+        return 0
+    size = len(people)
+    shortest_distance = None
+    for i in size:
+        for j in size:
+            distance = distanceBetween(people[i], bikes[j]) + shortestOverallDistance(people[:i] + people[i+1:], bikes[j] + bikes[j+1:])
+            if not shortest_distance or shortest_distance > distance:
+                shortest_distance = distance
+    return distance
+
+    def distanceBetween(p1, p2): #apply any custom distance function
+    '''
+ */
 
 /*
  * 距离场

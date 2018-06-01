@@ -48,18 +48,32 @@ vector<int> inorderTraversal(TreeNode *root) {
     return res;
 }
 
-vector<int> postorderTraversal(TreeNode* root) {
-    if (!root) return {};
-    vector<int> res;
-    stack<TreeNode*> s{{root}};
-    while (!s.empty()) {
-        TreeNode *t = s.top(); s.pop();
-        res.insert(res.begin(), t->val);
-        if (t->left) s.push(t->left);
-        if (t->right) s.push(t->right);
+//更简单的非递归后序遍历
+void postorderTraversalNew(TreeNode *root, vector<int> &path)
+{
+    stack< pair<TreeNode *, bool> > s;
+    s.push(make_pair(root, false));
+    bool visited;
+    while(!s.empty())
+    {
+        root = s.top().first;
+        visited = s.top().second;
+        s.pop();
+        if(root == NULL)
+            continue;
+        if(visited)
+        {
+            path.push_back(root->val);
+        }
+        else
+        {
+            s.push(make_pair(root, true));
+            s.push(make_pair(root->right, false));
+            s.push(make_pair(root->left, false));
+        }
     }
-    return res;
 }
+
 
 void inorderMorrisTraversal(TreeNode *root) {
     TreeNode *cur = root, *prev = NULL;
@@ -116,6 +130,69 @@ void preorderMorrisTraversal(TreeNode *root) {
             }
             else
             {
+                prev->right = NULL;
+                cur = cur->right;
+            }
+        }
+    }
+}
+
+void reverse(TreeNode *from, TreeNode *to) // reverse the tree nodes 'from' -> 'to'.
+{
+    if (from == to)
+        return;
+    TreeNode *x = from, *y = from->right, *z;
+    while (true)
+    {
+        z = y->right;
+        y->right = x;
+        x = y;
+        y = z;
+        if (x == to)
+            break;
+    }
+}
+
+void printReverse(TreeNode* from, TreeNode *to) // print the reversed tree nodes 'from' -> 'to'.
+{
+    reverse(from, to);
+
+    TreeNode *p = to;
+    while (true)
+    {
+        printf("%d ", p->val);
+        if (p == from)
+            break;
+        p = p->right;
+    }
+
+    reverse(to, from);
+}
+
+void postorderMorrisTraversal(TreeNode *root) {
+    TreeNode dump(0);
+    dump.left = root;
+    TreeNode *cur = &dump, *prev = NULL;
+    while (cur)
+    {
+        if (cur->left == NULL)
+        {
+            cur = cur->right;
+        }
+        else
+        {
+            prev = cur->left;
+            while (prev->right != NULL && prev->right != cur)
+                prev = prev->right;
+
+            if (prev->right == NULL)
+            {
+                prev->right = cur;
+                cur = cur->left;
+            }
+            else
+            {
+                printReverse(cur->left, prev);  // call print
                 prev->right = NULL;
                 cur = cur->right;
             }
